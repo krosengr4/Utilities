@@ -108,14 +108,7 @@ public class DesignUtils {
 
     public static void playSound(String sound) {
 
-        String filePath = "";
-
-        switch (sound) {
-            case "success" -> filePath = "TheDevDeli/src/sounds/owin31.wav";
-            case "shutDown" -> filePath = "TheDevDeli/src/sounds/winxpshutdown.wav";
-            case "wompWomp" -> filePath = "TheDevDeli/src/sounds/womp-womp.wav";
-            default -> System.err.println("ERROR! Argument passed in is not an option!");
-        }
+        String filePath = "src/sounds/" + sound; //!<--- filePath may need to change based on the projects file paths
 
         File audioFile = new File(filePath);
 
@@ -142,5 +135,10 @@ public class DesignUtils {
             e.printStackTrace(); }
 
     }
-
 }
+//        switch (sound) {
+//            case "success" -> filePath = "TheDevDeli/src/sounds/owin31.wav";
+//            case "shutDown" -> filePath = "TheDevDeli/src/sounds/winxpshutdown.wav";
+//            case "wompWomp" -> filePath = "TheDevDeli/src/sounds/womp-womp.wav";
+//            default -> System.err.println("ERROR! Argument passed in is not an option!");
+//        }
