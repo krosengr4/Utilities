@@ -7,13 +7,14 @@ public class IOUtils {
 
     static Scanner myScanner = new Scanner(System.in);
 
-    //prompt user, then get and return user input
-    public static String promptGetUserInput(String message) {
+    // Prompts user, gets user input, returns user input as a string
+    public static String getUserInput(String message) {
         System.out.println(message);
         return myScanner.nextLine().trim();
     }
 
-    public static int messageAndResponseInt(String message) {
+    // Prompts user to enter an integer, makes sure user input is an int, returns user input as an int
+    public static int getUserInputInt(String message) {
         while (true) {
             System.out.print(message);
             try {
@@ -24,7 +25,25 @@ public class IOUtils {
         }
     }
 
-    public static double messageAndResponseDouble(String message) {
+    // Prompts user to enter an integer, makes sure user input is an int and between a min and max value, returns user input as an int
+    public static int getUserInputIntMinMax(String message, int min, int max) {
+        while (true) {
+            System.out.print(message);
+            try {
+                int userInput = Integer.parseInt(myScanner.nextLine());
+                if (userInput >= min && userInput <= max) {
+                    return userInput;
+                } else {
+                    System.err.println("ERROR! Please Input a Valid Number!");
+                }
+            } catch (NumberFormatException e) {
+                System.err.println("ERROR! Invalid Input! Please enter a valid integer!");
+            }
+        }
+    }
+
+    // Prompts user to input a double, checks that user input is a double, returns user input as a double
+    public static double getUserInputDouble(String message) {
         while (true) {
             System.out.print(message);
             try {
