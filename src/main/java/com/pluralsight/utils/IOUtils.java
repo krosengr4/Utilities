@@ -73,4 +73,10 @@ public class IOUtils {
         }
         return capitalized.toString().trim();
     }
+
+    //! Major Security flaw
+    public static boolean passwordCheck(String userInput) {
+        String password = System.getenv("SQL_PASSWORD");
+        return userInput.equals(password);
+    }
 }
