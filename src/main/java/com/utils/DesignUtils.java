@@ -1,4 +1,4 @@
-package com.pluralsight.utils;
+package com.utils;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -61,9 +61,9 @@ public class DesignUtils {
     public DesignUtils(){}
 
     //region designing lines for output
-    public static void designLine(int numberOfLines, boolean isNewLine) {
-        StringBuilder underLine = new StringBuilder("=");
-        underLine.append("=".repeat(Math.max(0, numberOfLines)));
+    public static void designLine(int numberOfLines, boolean isNewLine, String symbol) {
+        StringBuilder underLine = new StringBuilder(symbol);
+        underLine.append(symbol.repeat(Math.max(0, numberOfLines)));
         if (isNewLine) {
             underLine.append("\n");
         }

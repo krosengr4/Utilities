@@ -1,4 +1,4 @@
-package com.pluralsight.utils;
+package com.utils;
 import java.util.Scanner;
 
 public class IOUtils {
